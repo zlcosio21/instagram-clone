@@ -1,0 +1,32 @@
+<section class="auth">
+  <div class="form-box-login">
+    <div class="form-value">
+
+      <%= render "home/instagram_icon" %>
+
+      <h2>Registrarse</h2>
+
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+
+        <div class="inputbox">
+          <%= f.label :email %><br><br>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Recuperar contraseña", class: "auth-button" %>
+        </div>
+
+        <div class="register">
+          <p><%= render "devise/shared/links" %></p>
+        </div>
+
+        <div class="inputbox-none">
+          <%= render "devise/shared/error_messages", resource: resource %>
+        </div>
+
+      <% end %>
+
+    </div>
+  </div>
+</section>

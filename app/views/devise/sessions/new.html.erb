@@ -1,0 +1,40 @@
+
+<section class="auth">
+  <div class="form-box-login">
+    <div class="form-value">
+
+      <%= render "home/instagram_icon" %>
+
+      <h2>Iniciar Sesion</h2>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+        <div class="inputbox">
+          <ion-icon name="mail-outline"></ion-icon>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true %>
+          <%= f.label :Correo %>
+        </div>
+
+        <div class="inputbox">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <%= f.password_field :password, autocomplete: "current-password", required: true %>
+          <%= f.label :Contraseña %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Iniciar Sesion", class: "auth-button" %>
+        </div>
+      <% end %>
+
+      <div class="register">
+        <p>No tengo una cuenta <%= render "devise/shared/links" %></p><br>
+      </div>
+
+      <div class="inputbox-none">
+        <p class="notice center"><%= notice %></p>
+        <p class="alert center"><%= alert %></p>
+      </div>
+
+    </div>
+  </div>
+</section>

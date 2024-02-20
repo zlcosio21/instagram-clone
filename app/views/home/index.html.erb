@@ -8,10 +8,10 @@
       <img src="img/profile-2.jpeg" alt="" />
     </div>
     <div class="name">
-      <h1>Jainy loe</h1>
+      <h1><%= current_user.username %></h1>
       <img src="img/verify.png" alt="" />
     </div>
-    <span>@jainyloe</span>
+    <span><%= current_user.email %></span>
   </div>
   <div class="about">
     <div class="box">
@@ -74,7 +74,7 @@
       <span class="icon">
         <i class="ri-logout-box-r-line"></i>
       </span>
-      Logout
+      <%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
     </a>
   </div>
 </div>

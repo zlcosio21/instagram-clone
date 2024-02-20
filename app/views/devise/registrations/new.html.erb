@@ -1,0 +1,52 @@
+
+<section class="auth">
+  <div class="form-box-register">
+    <div class="form-value">
+
+      <%= render "home/instagram_icon" %>
+
+      <h2>Registrarse</h2>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+        <div class="inputbox">
+          <ion-icon name="person-outline"></ion-icon>
+          <%= f.text_field :username, autofocus: true, autocomplee: "username", required: true %>
+          <%= f.label :"Nombre de usuario" %>
+        </div>
+
+        <div class="inputbox">
+          <ion-icon name="mail-outline"></ion-icon>
+          <%= f.email_field :email, autofocus: true, autocomplee: "email", required: true %>
+          <%= f.label :Correo %>
+        </div>
+
+        <div class="inputbox">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <%= f.password_field :password, autocomplete: "new-password", required: true %>
+          <%= f.label :Contraseña %>
+        </div>
+
+        <div class="inputbox">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", required: true %>
+          <%= f.label :"Confirmar Contraseña" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Registrarse", class: "auth-button" %>
+        </div>
+      <% end %>
+
+      <div class="register">
+        <p>Ya tengo una cuenta <%= render "devise/shared/links" %></p>
+      </div>
+
+      <div class="register">
+        <p>No correo repetido | Minimo 6 caracteres</p>
+        <p>Las Contraseñas deben ser iguales</p>
+      </div>
+
+    </div>
+  </div>
+</section>
