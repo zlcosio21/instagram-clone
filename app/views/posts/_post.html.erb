@@ -1,0 +1,17 @@
+<div id="<%= dom_id post %>" class="post-box">
+  <%= image_tag post.imagen if post.imagen.attached? %>
+  <div class="post-info">
+    <div class="post-profile">
+      <div class="post-img">
+        <%= image_tag post.imagen if post.imagen.attached? %>
+      </div>
+      <h3><%= current_user.username %></h3>
+    </div>
+    <div class="likes">
+      <i class="ri-heart-line"></i>
+        <span><%= post.likes %></span>
+      <i class="ri-chat-3-line"></i>
+        <span><%= post.num_comentarios %></span>
+    </div>
+  </div>
+</div>

@@ -86,13 +86,13 @@
       <input type="text" placeholder="search" />
     </div>
     <div class="header-content">
-      <i class="ri-notification-4-line"></i>
-      <i class="ri-mail-unread-fill"></i>
-      <a href="#" class="btn">
-        <i class="ri-add-circle-fill"></i>
-        <div class="btn-text">Add Photos</div>
-      </a>
-    </div>
+    <i class="ri-notification-4-line"></i>
+    <i class="ri-mail-unread-fill"></i>
+    <%= link_to new_post_path, class: "btn" do %>
+      <i class="ri-add-circle-fill"></i>
+      <div class="btn-text">Crear post</div>
+    <% end %>
+  </div>
   </div>
   <div class="stories">
     <div class="stories-img color">
@@ -141,144 +141,8 @@
     </div>
   </div>
   <div class="main-posts">
-    <div class="post-box">
-      <img src="img/post1.jpeg" alt="">
-      <div class="post-info">
-        <div class="post-profile">
-          <div class="post-img">
-            <img src="img/3.jpeg" alt="">
-          </div>
-          <h3>Jimmy S</h3>
-        </div>
-        <div class="likes">
-          <i class="ri-heart-line"></i>
-          <span>74.8k</span>
-          <i class="ri-chat-3-line"></i>
-          <span>1.9k</span>
-        </div>
-      </div>
-    </div>
-    <div class="post-box">
-      <img src="img/post2.jpeg" alt="">
-      <div class="post-info">
-        <div class="post-profile">
-          <div class="post-img">
-            <img src="img/2.jpeg" alt="">
-          </div>
-          <h3>Jimmy S</h3>
-        </div>
-        <div class="likes">
-          <i class="ri-heart-line"></i>
-          <span>74.8k</span>
-          <i class="ri-chat-3-line"></i>
-          <span>1.9k</span>
-        </div>
-      </div>
-    </div>
-    <div class="post-box">
-      <img src="img/post3.jpeg" alt="">
-      <div class="post-info">
-        <div class="post-profile">
-          <div class="post-img">
-            <img src="img/8.jpeg" alt="">
-          </div>
-          <h3>Jimmy S</h3>
-        </div>
-        <div class="likes">
-          <i class="ri-heart-line"></i>
-          <span>74.8k</span>
-          <i class="ri-chat-3-line"></i>
-          <span>1.9k</span>
-        </div>
-      </div>
-    </div>
-    <div class="post-box">
-      <img src="img/8.jpeg" alt="">
-      <div class="post-info">
-        <div class="post-profile">
-          <div class="post-img">
-            <img src="img/5.jpeg" alt="">
-          </div>
-          <h3>Jimmy S</h3>
-        </div>
-        <div class="likes">
-          <i class="ri-heart-line"></i>
-          <span>74.8k</span>
-          <i class="ri-chat-3-line"></i>
-          <span>1.9k</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="main-posts">
-    <div class="post-box">
-      <img src="img/post1.jpeg" alt="">
-      <div class="post-info">
-        <div class="post-profile">
-          <div class="post-img">
-            <img src="img/3.jpeg" alt="">
-          </div>
-          <h3>Jimmy S</h3>
-        </div>
-        <div class="likes">
-          <i class="ri-heart-line"></i>
-          <span>74.8k</span>
-          <i class="ri-chat-3-line"></i>
-          <span>1.9k</span>
-        </div>
-      </div>
-    </div>
-    <div class="post-box">
-      <img src="img/post2.jpeg" alt="">
-      <div class="post-info">
-        <div class="post-profile">
-          <div class="post-img">
-            <img src="img/2.jpeg" alt="">
-          </div>
-          <h3>Jimmy S</h3>
-        </div>
-        <div class="likes">
-          <i class="ri-heart-line"></i>
-          <span>74.8k</span>
-          <i class="ri-chat-3-line"></i>
-          <span>1.9k</span>
-        </div>
-      </div>
-    </div>
-    <div class="post-box">
-      <img src="img/post3.jpeg" alt="">
-      <div class="post-info">
-        <div class="post-profile">
-          <div class="post-img">
-            <img src="img/8.jpeg" alt="">
-          </div>
-          <h3>Jimmy S</h3>
-        </div>
-        <div class="likes">
-          <i class="ri-heart-line"></i>
-          <span>74.8k</span>
-          <i class="ri-chat-3-line"></i>
-          <span>1.9k</span>
-        </div>
-      </div>
-    </div>
-    <div class="post-box">
-      <img src="img/8.jpeg" alt="">
-      <div class="post-info">
-        <div class="post-profile">
-          <div class="post-img">
-            <img src="img/5.jpeg" alt="">
-          </div>
-          <h3>Jimmy S</h3>
-        </div>
-        <div class="likes">
-          <i class="ri-heart-line"></i>
-          <span>74.8k</span>
-          <i class="ri-chat-3-line"></i>
-          <span>1.9k</span>
-        </div>
-      </div>
-    </div>
+    <% @posts.each do |post| %>
+      <%= render partial: "posts/post", locals: { post: post } %>
+    <% end %>
   </div>
 </div>

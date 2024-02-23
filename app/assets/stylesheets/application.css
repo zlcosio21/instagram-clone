@@ -310,13 +310,14 @@ body {
 }
 
 .main-posts {
-    display: flex;
-    grid-template-columns: repeat(auto-fix, minmax(300px - auto));
-    gap: 11px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(205px, auto));
+    row-gap: 10px;
+    column-gap: 25px;
 }
 
 .post-box {
-    width: 300px;
+    width: 270px;
     background-color: #1c1c1c;
     padding: 15px;
 }
