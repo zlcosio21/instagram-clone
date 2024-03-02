@@ -8,10 +8,14 @@
       <img src="img/profile-2.jpeg" alt="" />
     </div>
     <div class="name">
-      <h1><%= current_user.username %></h1>
+      <h1>
+        <%= current_user.username %>
+      </h1>
       <img src="img/verify.png" alt="" />
     </div>
-    <span><%= current_user.email %></span>
+    <span>
+      <%= current_user.email %>
+    </span>
   </div>
   <div class="about">
     <div class="box">
@@ -74,65 +78,28 @@
       <span class="icon">
         <i class="ri-logout-box-r-line"></i>
       </span>
-      <%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
+      <%= link_to "Cerrar Sesion" , destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
     </a>
   </div>
 </div>
 <!---main home--->
 <div class="main-home">
+
   <div class="header">
     <div class="search">
       <i class="ri-search-line"></i>
       <input type="text" placeholder="search" />
     </div>
-    <div class="header-content">
-    <i class="ri-notification-4-line"></i>
-    <i class="ri-mail-unread-fill"></i>
-    <%= link_to new_post_path, class: "btn" do %>
-      <i class="ri-add-circle-fill"></i>
-      <div class="btn-text">Crear post</div>
-    <% end %>
-  </div>
-  </div>
-  <div class="stories">
-    <div class="stories-img color">
-      <img src="img/profile-2.jpeg" alt="">
-      <div class="add">+</div>
-    </div>
-    <div class="stories-img">
-      <img src="img/profile-1.jpeg" alt="">
-    </div>
-    <div class="stories-img">
-      <img src="img/1.jpeg" alt="">
-    </div>
-    <div class="stories-img">
-      <img src="img/2.jpeg" alt="">
-    </div>
-    <div class="stories-img">
-      <img src="img/3.jpeg" alt="">
-    </div>
-    <div class="stories-img">
-      <img src="img/4.jpeg" alt="">
-    </div>
-    <div class="stories-img">
-      <img src="img/5.jpeg" alt="">
-    </div>
-    <div class="stories-img">
-      <img src="img/6.jpeg" alt="">
-    </div>
-    <div class="stories-img">
-      <img src="img/7.jpeg" alt="">
-    </div>
-    <div class="stories-img">
-      <img src="img/8.jpeg" alt="">
-    </div>
-    <div class="stories-img">
-      <img src="img/3.jpeg" alt="">
-    </div>
-    <div class="stories-img">
-      <img src="img/4.jpeg" alt="">
+    <div class="header-content header-relatve">
+      <i class="ri-notification-4-line"></i>
+      <i class="ri-mail-unread-fill"></i>
+      <%= link_to new_post_path, class: "btn" do %>
+        <i class="ri-add-circle-fill"></i>
+        <div class="btn-text">Crear post</div>
+      <% end %>
     </div>
   </div>
+
   <div class="feed">
     <h1>Feed</h1>
     <div class="feed-text">
@@ -140,9 +107,86 @@
       <span>Populer</span>
     </div>
   </div>
-  <div class="main-posts">
+
+  <main class="main-container">
+    <%= render "posts/storie" %>
+  </main>
+
+  <div class="posts">
     <% @posts.each do |post| %>
-      <%= render partial: "posts/post", locals: { post: post } %>
+      <%= render partial: "posts/post" , locals: { post: post } %>
     <% end %>
   </div>
+
+  <section class="side-menu">
+    <div class="side-menu__user-profile">
+      <a href="https://github.com/leocosta1" target="_blank" class="side-menu__user-avatar">
+        <img src="assets/default-user.png" alt="User Picture" />
+      </a>
+      <div class="side-menu__user-info">
+        <a href="https://github.com/leocosta1" target="_blank">leocosta1</a>
+        <span>Leonardo Costa</span>
+      </div>
+      <button class="side-menu__user-button">Switch</button>
+    </div>
+
+    <div class="side-menu__suggestions-section">
+      <div class="side-menu__suggestions-header">
+        <h2>Suggestions for You</h2>
+        <button>See All</button>
+      </div>
+      <div class="side-menu__suggestions-content">
+        <div class="side-menu__suggestion">
+          <a href="#" class="side-menu__suggestion-avatar">
+            <img src="assets/default-user.png" alt="User Picture" />
+          </a>
+          <div class="side-menu__suggestion-info">
+            <a href="#">usernick16</a>
+            <span>Followed by user1, user2 and 9 others</span>
+          </div>
+          <button class="side-menu__suggestion-button">Follow</button>
+        </div>
+        <div class="side-menu__suggestion">
+          <a href="#" class="side-menu__suggestion-avatar">
+            <img src="assets/default-user.png" alt="User Picture" />
+          </a>
+          <div class="side-menu__suggestion-info">
+            <a href="#">usernick17</a>
+            <span>Followed by user1, user2 and 3 others</span>
+          </div>
+          <button class="side-menu__suggestion-button">Follow</button>
+        </div>
+        <div class="side-menu__suggestion">
+          <a href="#" class="side-menu__suggestion-avatar">
+            <img src="assets/default-user.png" alt="User Picture" />
+          </a>
+          <div class="side-menu__suggestion-info">
+            <a href="#">usernick18</a>
+            <span>Followed by user1 and 9 others</span>
+          </div>
+          <button class="side-menu__suggestion-button">Follow</button>
+        </div>
+        <div class="side-menu__suggestion">
+          <a href="#" class="side-menu__suggestion-avatar">
+            <img src="assets/default-user.png" alt="User Picture" />
+          </a>
+          <div class="side-menu__suggestion-info">
+            <a href="#">usernick19</a>
+            <span>Followed by user1 and 3 others</span>
+          </div>
+          <button class="side-menu__suggestion-button">Follow</button>
+        </div>
+        <div class="side-menu__suggestion">
+          <a href="#" class="side-menu__suggestion-avatar">
+            <img src="assets/default-user.png" alt="User Picture" />
+          </a>
+          <div class="side-menu__suggestion-info">
+            <a href="#">usernick20</a>
+            <span>Followed by user1 and 6 others</span>
+          </div>
+          <button class="side-menu__suggestion-button">Follow</button>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
