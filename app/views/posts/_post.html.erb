@@ -15,7 +15,7 @@
 
     <div class="post__content">
       <div class="post__medias">
-        <%= image_tag post.imagen if post.imagen.attached? %>
+        <%= image_tag post.imagen, class: "post-img" if post.imagen.attached? %>
       </div>
     </div>
 

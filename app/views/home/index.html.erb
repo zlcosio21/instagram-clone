@@ -74,11 +74,11 @@
       </span>
       Settings
     </a>
-    <a href="#">
+    <a href="">
       <span class="icon">
         <i class="ri-logout-box-r-line"></i>
       </span>
-      <%= link_to "Cerrar Sesion" , destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
+      <%= button_to('Cerrar Sesion', destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "btn-logout") %>
     </a>
   </div>
 </div>
@@ -100,14 +100,6 @@
     </div>
   </div>
 
-  <div class="feed">
-    <h1>Feed</h1>
-    <div class="feed-text">
-      <h2>Latest</h2>
-      <span>Populer</span>
-    </div>
-  </div>
-
   <main class="main-container">
     <%= render "posts/storie" %>
   </main>
@@ -119,74 +111,7 @@
   </div>
 
   <section class="side-menu">
-    <div class="side-menu__user-profile">
-      <a href="https://github.com/leocosta1" target="_blank" class="side-menu__user-avatar">
-        <img src="assets/default-user.png" alt="User Picture" />
-      </a>
-      <div class="side-menu__user-info">
-        <a href="https://github.com/leocosta1" target="_blank">leocosta1</a>
-        <span>Leonardo Costa</span>
-      </div>
-      <button class="side-menu__user-button">Switch</button>
-    </div>
-
-    <div class="side-menu__suggestions-section">
-      <div class="side-menu__suggestions-header">
-        <h2>Suggestions for You</h2>
-        <button>See All</button>
-      </div>
-      <div class="side-menu__suggestions-content">
-        <div class="side-menu__suggestion">
-          <a href="#" class="side-menu__suggestion-avatar">
-            <img src="assets/default-user.png" alt="User Picture" />
-          </a>
-          <div class="side-menu__suggestion-info">
-            <a href="#">usernick16</a>
-            <span>Followed by user1, user2 and 9 others</span>
-          </div>
-          <button class="side-menu__suggestion-button">Follow</button>
-        </div>
-        <div class="side-menu__suggestion">
-          <a href="#" class="side-menu__suggestion-avatar">
-            <img src="assets/default-user.png" alt="User Picture" />
-          </a>
-          <div class="side-menu__suggestion-info">
-            <a href="#">usernick17</a>
-            <span>Followed by user1, user2 and 3 others</span>
-          </div>
-          <button class="side-menu__suggestion-button">Follow</button>
-        </div>
-        <div class="side-menu__suggestion">
-          <a href="#" class="side-menu__suggestion-avatar">
-            <img src="assets/default-user.png" alt="User Picture" />
-          </a>
-          <div class="side-menu__suggestion-info">
-            <a href="#">usernick18</a>
-            <span>Followed by user1 and 9 others</span>
-          </div>
-          <button class="side-menu__suggestion-button">Follow</button>
-        </div>
-        <div class="side-menu__suggestion">
-          <a href="#" class="side-menu__suggestion-avatar">
-            <img src="assets/default-user.png" alt="User Picture" />
-          </a>
-          <div class="side-menu__suggestion-info">
-            <a href="#">usernick19</a>
-            <span>Followed by user1 and 3 others</span>
-          </div>
-          <button class="side-menu__suggestion-button">Follow</button>
-        </div>
-        <div class="side-menu__suggestion">
-          <a href="#" class="side-menu__suggestion-avatar">
-            <img src="assets/default-user.png" alt="User Picture" />
-          </a>
-          <div class="side-menu__suggestion-info">
-            <a href="#">usernick20</a>
-            <span>Followed by user1 and 6 others</span>
-          </div>
-          <button class="side-menu__suggestion-button">Follow</button>
-        </div>
-      </div>
-    </div>
+    <%= render "home/side_menu" %>
   </section>
+
 </div>
